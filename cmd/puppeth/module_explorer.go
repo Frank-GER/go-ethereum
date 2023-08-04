@@ -227,14 +227,15 @@ func deployExplorer(client *sshClient, network string, bootnodes []string, confi
 		transformer = "clique"
 	}
 	dockerfile := new(bytes.Buffer)
-	subNetwork := ""
+	subNetwork := "Syscoin"
 	showPriceChart := "true"
 	disableExchangeRates := "false"
 	showTestnetLabel := "false"
 	footerChat := "https://discord.gg/syscoin"
 	footerForum := "https://support.syscoin.org/"
 	footerGithub := "https://github.com/syscoin/syscoin"
-	supportedChains := `[{"title":"Tanenbaum Testnet","url":"https://tanenbaum.io","test_net?":true},{"title":"Syscoin Mainnet","url":"https://explorer.syscoin.org"}]`
+//	supportedChains := `[{"title":"Tanenbaum Testnet","url":"https://tanenbaum.io","test_net?":true},{"title":"Syscoin Mainnet","url":"https://explorer.syscoin.org"}]`
+	supportedChains := `[{"title":"Syscoin Tanenbaum (L1)","url":"https://tanenbaum.io","test_net?":true},{"title":"Rollux Tanenbaum (L2)","url":"https://rollux.tanenbaum.io","test_net?":true},{"title":"Syscoin (L1)","url":"https://explorer.syscoin.org"},{"title":"Rollux (L2)","url":"https://explorer.rollux.com"}]`
 	if config.node.network == 5700 {
 		subNetwork = "Tanenbaum"
 		disableExchangeRates = "true"
